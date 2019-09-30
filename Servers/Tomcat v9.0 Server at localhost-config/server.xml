@@ -150,7 +150,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="13_acceso_datos" path="/13_acceso_datos" reloadable="true" source="org.eclipse.jst.jee.server:13_acceso_datos"/><Context docBase="14_contactos_mvc" path="/14_contactos_mvc" reloadable="true" source="org.eclipse.jst.jee.server:14_contactos_mvc"/><Context docBase="15_contactos_mvc2" path="/15_contactos_mvc2" reloadable="true" source="org.eclipse.jst.jee.server:15_contactos_mvc2"/><Context docBase="16_contactos_datasource" path="/16_contactos_datasource" reloadable="true" source="org.eclipse.jst.jee.server:16_contactos_datasource"/></Host>
+      <Context docBase="13_acceso_datos" path="/13_acceso_datos" reloadable="true" source="org.eclipse.jst.jee.server:13_acceso_datos"/><Context docBase="14_contactos_mvc" path="/14_contactos_mvc" reloadable="true" source="org.eclipse.jst.jee.server:14_contactos_mvc"/><Context docBase="15_contactos_mvc2" path="/15_contactos_mvc2" reloadable="true" source="org.eclipse.jst.jee.server:15_contactos_mvc2"/><Context docBase="16_contactos_datasource" path="/16_contactos_datasource" reloadable="true" source="org.eclipse.jst.jee.server:16_contactos_datasource"/><Context docBase="18_contactos_jstl" path="/18_contactos_jstl" reloadable="true" source="org.eclipse.jst.jee.server:18_contactos_jstl"/></Host>
     </Engine>
   </Service>
 </Server>
