@@ -19,7 +19,7 @@ public class ContactosAction extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DaoContactos dao=FactoryDao.getDaoContactos();
 		List<Contacto> contactos=dao.recuperarContactos();
-		if(contactos.size()>0) {
+		if(contactos!=null&&contactos.size()>0) {
 			request.setAttribute("resultado",1);
 			request.setAttribute("contactos",contactos);
 		}else {
