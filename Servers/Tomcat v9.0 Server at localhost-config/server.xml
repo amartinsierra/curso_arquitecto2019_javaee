@@ -36,7 +36,8 @@
     <!-- Editable user database that can also be used by
          UserDatabaseRealm to authenticate users
     -->
-    <Resource driverClassName="com.mysql.jdbc.Driver" name="jdbc/contactosds" password="root" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/agenda" username="root"/>
+    <Resource driverClassName="com.mysql.jdbc.Driver" name="jdbc/librosds" password="root" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/libros" username="root"/>
+    <Resource driverClassName="com.mysql.jdbc.Driver" name="jdbc/contactosds" password="root" type="javax.sql.DataSource" url="jdbc:mysql://localhost:3306/agenda2" username="root"/>
     <Resource auth="Container" description="User database that can be updated and saved" factory="org.apache.catalina.users.MemoryUserDatabaseFactory" name="UserDatabase" pathname="conf/tomcat-users.xml" type="org.apache.catalina.UserDatabase"/>
   </GlobalNamingResources>
 

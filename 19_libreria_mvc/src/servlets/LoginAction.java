@@ -9,10 +9,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import factories.FactoryDao;
 import javabeans.Libro;
 import modelo.DaoClientes;
-import modelo.DaoLibros;
+import modelo.DaoLibrosImpl;
 import modelo.DaoTemas;
+import modelo.DaoTemasImpl;
 
 
 
@@ -22,10 +24,10 @@ public class LoginAction extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		DaoClientes gestion=new DaoClientes();
+		DaoClientes gestion=FactoryDao.getDaoClientes();
 		boolean resultado=false;
 		if(gestion.autenticar(request.getParameter("user"),request.getParameter("pwd"))){
-			DaoTemas gtemas=new DaoTemas();
+			DaoTemas gtemas=new DaoTemasImpl();
 			request.setAttribute("temas", gtemas.obtenerTemas());
 			
             resultado=true;

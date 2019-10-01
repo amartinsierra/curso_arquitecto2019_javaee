@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import factories.FactoryDao;
 import javabeans.Libro;
 import modelo.DaoLibros;
 
@@ -22,7 +23,7 @@ public class LibrosAction extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int idTema=Integer.parseInt(request.getParameter("tema"));
 	
-		DaoLibros glibros=new DaoLibros();
+		DaoLibros glibros=FactoryDao.getDaoLibros();
 		List<Libro> libros;
 		//si idTema es 0 es que ha elegido todos
 		if(idTema==0){

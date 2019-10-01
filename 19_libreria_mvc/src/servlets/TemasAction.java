@@ -8,7 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import factories.FactoryDao;
 import modelo.DaoTemas;
+import modelo.DaoTemasImpl;
 
 
 /**
@@ -22,7 +24,7 @@ public class TemasAction extends HttpServlet {
 	 * @see HttpServlet#service(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DaoTemas gtemas=new DaoTemas();
+		DaoTemas gtemas=FactoryDao.getDaoTemas();
 		request.setAttribute("temas", gtemas.obtenerTemas());
 		
 	}

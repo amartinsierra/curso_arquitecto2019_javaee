@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import factories.FactoryDao;
 import javabeans.Cliente;
 import modelo.DaoClientes;
 
@@ -17,7 +18,7 @@ import modelo.DaoClientes;
 public class RegistroAction extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DaoClientes gestion=new DaoClientes();
+		DaoClientes gestion=FactoryDao.getDaoClientes();
                 Cliente c=new Cliente(0,request.getParameter("usuario"),
                 request.getParameter("password"),
                         request.getParameter("email"),

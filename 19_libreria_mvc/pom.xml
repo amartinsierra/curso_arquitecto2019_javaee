@@ -25,13 +25,14 @@
     </plugins>
   </build>
   <dependencies>
-	
-	    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+	<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 	<dependency>
-	    <groupId>mysql</groupId>
-	    <artifactId>mysql-connector-java</artifactId>
-	    <version>5.1.46</version>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
 	</dependency>
+  	
+	   
 	 
  </dependencies>
 </project>

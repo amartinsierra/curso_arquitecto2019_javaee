@@ -2,6 +2,7 @@
 	language="java" contentType="text/html; charset=ISO-8859-1"
 	
 	pageEncoding="ISO-8859-1" import="java.util.*,javabeans.*"%>
+	<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <html>
 <head>
@@ -16,11 +17,9 @@
 		<form  action="Controller?op=doLibros" method="post">
 			<select name="tema">
 				<option value="0">Todos</option>
-				<%List<Tema> temas=(List<Tema>)request.getAttribute("temas");
-				
-				for(Tema t:temas){ %>
-					<option value="<%=t.getIdTema()%>"><%=t.getTema()%></option>				
-				<%} %>
+				<c:forEach var="t" items="${requestScope.temas}">
+					<option value="${t.idTema}">${t.tema}</option>				
+				</c:forEach>
 				
 			</select>
 			<br/><br/>

@@ -27,4 +27,5 @@
     <Manager pathname="" />
     -->
     <ResourceLink type="javax.sql.DataSource" name="refcontactos" global="jdbc/contactosds"/>
+    <ResourceLink type="javax.sql.DataSource" name="reflibros" global="jdbc/librosds"/>
 </Context>

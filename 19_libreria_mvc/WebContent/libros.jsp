@@ -1,4 +1,4 @@
-
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE HTML><%@page language="java"
 	contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"
 	import="java.util.*,javabeans.*"%>
@@ -9,23 +9,25 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 </head>
 <body>
-    
-<%List<Libro> libros=(List<Libro>)request.getAttribute("libros"); 
-	if(libros!=null && libros.size()>0){%>
+ <c:set var="libros" value="${requestScope.libros}"/>   
+<c:choose>
+	<c:when test="${!empty libros}">
 
 		<table border="1">
 		    <tr><th>Titulo</th><th>Autor</th><th>Precio</th></tr>		    	
-		    	<%for(Libro lib:libros){ %>
+		    	<c:forEach var="lib" items="${libros}">
 		    		<tr>
-		    			<td><%=lib.getTitulo()%></td>
-						<td><%=lib.getAutor()%></td>
-						<td><%=lib.getPrecio()%></td>
+		    			<td>${lib.titulo}</td>
+						<td>${lib.autor}</td>
+						<td>${lib.precio}</td>
 					</tr>		    	
-		    	<%} %>
+		    	</c:forEach>
 		</table>
-	<%}else{%>
+	</c:when>
+	<c:otherwise>
 		<h2>No hay libros</h2>
-	<%}%>
+	</c:otherwise>
+</c:choose>
 <br/><br/>
 <a href="Controller?op=doTemas">Otro tema</a>
 </body>
