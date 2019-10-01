@@ -18,7 +18,7 @@
 <body>
 
 	
-<c:set var="listaContactos" value="${requestScope.contactos}"/>
+
 <div class="container">
   <table class="table table-striped">
     <thead>
@@ -31,7 +31,7 @@
       </tr>
     </thead>
     <tbody>
-    <c:forEach var="contacto" items="${listaContactos}">	
+    <c:forEach var="contacto" items="${requestScope.contactos}">	
       <tr>
         <td>${contacto.idContacto}</td>
         <td>${contacto.nombre}</td>
